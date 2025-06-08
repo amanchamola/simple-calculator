@@ -9,6 +9,10 @@ class CalcRequest(BaseModel):
     num2: float
     operation: str  # "add", "subtract", "multiply", "divide"
 
+@app.get("/")
+def root():
+    return {"status": "ok"}
+    
 @app.post("/simple-calculator")
 def calculate(request: CalcRequest):
     num1 = request.num1
